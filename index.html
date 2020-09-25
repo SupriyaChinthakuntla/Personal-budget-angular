@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="Meta Summary" content= "Budget Tracking application where you can log all your expenses and track budget and be free from debt! It's free. Start today!">
+    <!-- This is an SEO Change -->
+    <meta name="MetaSummary" content= "Budget Tracking application where you can log all your expenses and track budget and be free from debt! It's free. Start today!">
+    <!-- This is an SEO Change -->
+    <meta name="keyword" content = "Tracking, Expenses, Savings">
+    <!-- This is an SEO Change -->
+    <meta property="og:MetaSummary" content="Expense Tracking">     <!-- This is an SEO Change -->
     <title>Track your expenses and start savings</title>
     <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
 
-    <div class="menu">
+        <nav role = "NavigatingToAnotherPage">  <!-- This is a Semantic HTML Change --> 
+            <!-- This is an A11y Change -->
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about.html">About</a></li>
             <li><a href="/login.html">Login</a></li>
             <li><a href="https://google.com">Google</a></li>
         </ul>
-    </div>
+        </nav>
 
         <!-- This is a Semantic HTML Change -->
         <header>   
@@ -39,8 +46,7 @@
             </article>
     
             <!-- This is a Semantic HTML Change -->
-            <article>
-            <div class="text-box">
+            <article aria-label="alert"> <!-- This is an A11y Change -->
                 <h1>Alerts</h1>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
@@ -48,7 +54,7 @@
         </article>
 
         <!-- This is a Semantic HTML Change -->
-        <article>
+        <article aria-label="result"> <!-- This is an A11y Change -->
                 <h1>Results</h1>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
@@ -58,7 +64,7 @@
             </article>
 
             <!-- This is a Semantic HTML Change -->
-            <article>
+            <article aria-label="free"> <!-- This is an A11y Change -->
                 <h1>Free</h1>
                 <p>
                     This app is free!!! And you are the only one holding your data!
@@ -68,7 +74,7 @@
     </div>
 
          <!-- This is a Semantic HTML Change -->
-        <footer>
+        <footer role = "footerRole"> <!-- This is an A11y Change -->
         <div class="center">
             All rights reserved &copy; Fabio Nolasco
         </div>
