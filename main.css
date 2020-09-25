@@ -37,7 +37,7 @@ div.menu ul li a:hover  {
     color: #4d5791;
 }
 
-div.hero {
+header {
     height: 350px;
     background-color: #b4c6f0;
     background-image: url('/bg.png');
@@ -47,19 +47,19 @@ div.hero {
     padding-top: 40px;
 }
 
-div.hero h1,
-div.hero h2 {
+header h1,
+header h2 {
     text-align: center;
     margin: 0;
 }
 
-div.hero h1 {
+header h1 {
     color: #fff;
     font-size: 4.2em;
     margin-bottom: 20px;
 }
 
-div.hero h2 {
+header h2 {
     color: #4d5791;
 }
 
@@ -83,7 +83,7 @@ div.hero h2 {
     text-align: center;
 }
 
-.container div.text-box {
+.container article {
     display: inline-block;
     width: 100%;
     max-width: 340px;
@@ -92,7 +92,7 @@ div.hero h2 {
 }
 
 @media screen and (min-width: 768px) {
-    .container .div.text-box {
+    .container article {
         margin: 10px;
     }
 }
