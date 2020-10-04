@@ -7,16 +7,40 @@ const budget =
 {
     myBudget:[
     {
-        title: "Eat out",
+        title: 'Eat out',
         budget: 30
     },
     {
         title: 'Rent',
-        budget: 350
+        budget: 250
     },
     {
         title: 'Groceries',
         budget: 90
+    },
+    {
+        title: 'Movies',
+        budget: 50
+    },  
+    {
+        title: 'Travel Expenses',
+        budget: 300
+    }, 
+    {
+        title: 'Trip',
+        budget: 200
+    },
+    {
+        title: 'Repairs',
+        budget: 44
+    },
+    {
+        title: 'Shopping',
+        budget: 100
+    },
+    {
+        title: 'Medical Expenses',
+        budget: 150
     },
 ]};
 
