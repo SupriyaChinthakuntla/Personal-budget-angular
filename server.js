@@ -1,18 +1,16 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const port = 3000;
-app.use('/', express.static('public'));
+
+app.use(cors());
 
 const data= require('./budget.json');
-
-app.get('/hello', (req, res) => {
-    res.send('Hello World!');
-});
 
 app.get('/budget', (req, res) => {
     res.json(data);
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`API served at http://localhost:${port}`);
 });
