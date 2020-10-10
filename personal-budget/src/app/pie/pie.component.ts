@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as d3 from 'd3';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../data.service';
@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
   templateUrl: './pie.component.html',
   styleUrls: ['./pie.component.scss']
 })
-export class PieComponent implements OnInit {
+export class PieComponent implements AfterViewInit {
 
   private data = [];
 
@@ -22,16 +22,24 @@ export class PieComponent implements OnInit {
 
   constructor(private http: HttpClient, public dataService: DataService) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    console.log('ViewInit');
+    if (this.dataService.dataArray.length > 0) {
+      this.data = this.dataService.dataArray;
+      this.createSvg();
+      this.createColors();
+      this.drawChart();
+    } else {
   this.dataService.getData()
   .subscribe((res: any) => {
+    this.dataService.dataArray = res;
     this.data = res.myBudget;
     this.createSvg();
     this.createColors();
     this.drawChart();
   });
-
-  }
+    }
+}
 
   private createSvg(): void {
     this.svg = d3.select('figure#pie')

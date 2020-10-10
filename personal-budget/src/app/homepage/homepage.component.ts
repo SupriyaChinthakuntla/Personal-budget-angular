@@ -34,8 +34,18 @@ export class HomepageComponent implements AfterViewInit {
   constructor(private http: HttpClient, public dataService:DataService) { }
 
   ngAfterViewInit(): void {
-    this.dataService.getData()
+
+    if (this.dataService.dataArray.length > 0){
+      for (let i = 0; i < this.dataService.dataArray.length; i++) {
+        this.dataSource.datasets[0].data[i] = this.dataService.dataArray[i].budget;
+        this.dataSource.labels[i] = this.dataService.dataArray[i].title;
+        this.createChart();
+      }
+    } else {
+
+    this.http.get('http://localhost:3000/budget')
     .subscribe((res: any) => {
+      this.dataService.dataArray = res;
       for (let i = 0; i < res.myBudget.length; i++) {
        this.dataSource.datasets[0].data[i] = res.myBudget[i].budget;
        this.dataSource.labels[i] = res.myBudget[i].title;
@@ -43,8 +53,10 @@ export class HomepageComponent implements AfterViewInit {
       }
     });
   }
+}
 
   createChart() {
+
     var ctx = (document.getElementById("myChart") as HTMLCanvasElement).getContext('2d');
 
     const myPieChart = new Chart(ctx, {
