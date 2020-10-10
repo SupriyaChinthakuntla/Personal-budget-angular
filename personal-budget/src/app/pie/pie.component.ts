@@ -23,22 +23,13 @@ export class PieComponent implements AfterViewInit {
   constructor(private http: HttpClient, public dataService: DataService) { }
 
   ngAfterViewInit(): void {
-    console.log('ViewInit');
-    if (this.dataService.dataArray.length > 0) {
-      this.data = this.dataService.dataArray;
-      this.createSvg();
-      this.createColors();
-      this.drawChart();
-    } else {
   this.dataService.getData()
   .subscribe((res: any) => {
-    this.dataService.dataArray = res;
     this.data = res.myBudget;
     this.createSvg();
     this.createColors();
     this.drawChart();
   });
-    }
 }
 
   private createSvg(): void {
