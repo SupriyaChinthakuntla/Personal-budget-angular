@@ -8,21 +8,17 @@ import { shareReplay, takeUntil } from 'rxjs/operators';
 })
 export class DataService {
 
-  someDataObservable: Observable<any>;
-
-// private _cachedData = [];
-// public dataArray = this._cachedData.asObservable();
+DataObservable: Observable<any>;
 
 constructor(private http: HttpClient) { }
 
 // tslint:disable-next-line: typedef
 getData(): Observable<any> {
-  if (this.someDataObservable) {
-    return this.someDataObservable;
+  if (this.DataObservable) {
+    return this.DataObservable;
   } else {
-    this.someDataObservable = this.http.get('http://localhost:3000/budget').pipe(shareReplay());
-    return this.someDataObservable;
+    this.DataObservable = this.http.get('http://localhost:3000/budget').pipe(shareReplay());
+    return this.DataObservable;
   }
 }
-
 }
